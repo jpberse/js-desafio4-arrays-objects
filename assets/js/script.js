@@ -1,23 +1,23 @@
 const propiedadesVentas = [
     {
         nombre: 'Apartamento de lujo en zona exclusiva',
-        src: 'https://fotos.perfil.com/2018/09/21/trim/950/534/nueva-york-09212018-366965.jpg',
+        src: 'https://www.relatedrentals.com/sites/default/files/2022-08/EXT-IMG-1.jpg',
         descripcion: 'Este apartamento de lujo está ubicado en una exclusiva zona residencial',
-        ubicacion: '123 Luxury Lane, Prestige Suburb, CA 45678',
-        habitaciones: 4,
+        ubicacion: '1448 Roselyn Estates, Lavinaside',
+        habitaciones: 6,
         baños: 4,
-        costo: 5.000,
-        smoke: false,
+        costo: 5000,
+        smoke: true,
         pets: false
     },
     {
-        nombre: 'Apartamento acogedor en la montaña',
+        nombre: 'Apartamento en zona Empresarial',
         src: 'https://cdn.bioguia.com/embed/3d0fb0142790e6b90664042cbafcb1581427139/furgoneta.jpg',
-        descripcion: 'Este apartamento acogedor está situado en lo alto de una montaña con impresionantes vistas',
+        descripcion: 'Este apartamento acogedor está situado en la mejor zona empresarial de la ciudad',
         ubicacion: '1789 Mountain Road, Summit Peaks, CA 23456',
         habitaciones: 2,
         baños: 1,
-        costo: 1.200,
+        costo: 1200,
         smoke: true,
         pets: true
     },
@@ -28,7 +28,7 @@ const propiedadesVentas = [
         ubicacion: '567 Skyline Avenue, Skyview City, CA 56789',
         habitaciones: 3,
         baños: 3,
-        costo: 4.500,
+        costo: 4500,
         smoke: false,
         pets: true
     },
@@ -39,14 +39,39 @@ const propiedadesVentas = [
         ubicacion: '1789 Mountain Road, Summit Peaks, CA 23456',
         habitaciones: 2,
         baños: 1,
-        costo: 1.200,
+        costo: 1200,
         smoke: true,
         pets: true
     }
 ];
 
+const propiedadesAlquiler = [
+    {
+        nombre: 'Resort lujoso para tus vaciones',
+        src: 'https://images.pexels.com/photos/258154/pexels-photo-258154.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        descripcion: 'Lujoso resort con todo incluido para que disfrutes al maximo.',
+        ubicacion: '997 Darrion Walk, Port Jeanneville, Arizona',
+        habitaciones: 1,
+        baños: 2,
+        costo: 6000,
+        smoke: false,
+        pets: false
+    },
+    {
+        nombre: 'Cabaña en la nieve',
+        src: 'https://images.pexels.com/photos/10936350/pexels-photo-10936350.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        descripcion: 'Amplio apartamente y confortable, para disfrutar climas frios',
+        ubicacion: '99296 Hamill Stravenue, Metzview, New York',
+        habitaciones: 4,
+        baños: 2,
+        costo: 2400,
+        smoke: false,
+        pets: true
+    },
+];
+
 const sectionVenta = document.querySelector('.venta-div');
-const sectionAlquiler = document.querySelector('#alquiler')
+const sectionAlquiler = document.querySelector('.alquiler-div')
 let htmlVenta =''
 let htmlAlquiler =''
 
@@ -72,10 +97,10 @@ const renderCards = (propierties, html) => {
                             ${propiertie.ubicacion}
                         </p>
                         <p>
-                        <i class="fas fa-bed"></i> ${propiertie.habitaciones} |-
-                        <i class="fas fa-bath"></i> ${propiertie.baños}
+                        <i class="fas fa-bed"></i> ${propiertie.habitaciones} Habitaciones |
+                        <i class="fas fa-bath"></i> ${propiertie.baños} Baños
                         </p>
-                        <p><i class="fas fa-dollar-sign"></i> ${propiertie.costo}</p>
+                        <p><i class="fas fa-dollar-sign"></i> ${propiertie.costo.toLocaleString()}</p>
                         ${propiertie.smoke?
                             '<p class="text-success"><i class="fas fa-smoking"></i> Permitido fumar</p>'
                             :'<p class="text-danger"><i class="fas fa-smoking-ban"></i> No se permite fumar</p>'
@@ -92,5 +117,7 @@ const renderCards = (propierties, html) => {
 };
 
 let cardsVenta = renderCards(propiedadesVentas, htmlVenta)
+let cardsAlquiler = renderCards(propiedadesAlquiler, htmlAlquiler)
 
 sectionVenta? sectionVenta.innerHTML = cardsVenta : '';
+sectionAlquiler? sectionAlquiler.innerHTML = cardsAlquiler : '';
