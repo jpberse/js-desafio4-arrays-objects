@@ -12,7 +12,7 @@ const propiedadesVentas = [
     },
     {
         nombre: 'Apartamento en zona Empresarial',
-        src: 'https://cdn.bioguia.com/embed/3d0fb0142790e6b90664042cbafcb1581427139/furgoneta.jpg',
+        src: 'https://images1.apartments.com/i2/2-xypz-_A_cuLCERn2IuFS8Lumr1roXKHcLMHQ_SU4s/111/unfurnished-1-bedroom-new-york-ny-primary-photo.jpg',
         descripcion: 'Este apartamento acogedor está situado en la mejor zona empresarial de la ciudad',
         ubicacion: '1789 Mountain Road, Summit Peaks, CA 23456',
         habitaciones: 2,
@@ -33,15 +33,15 @@ const propiedadesVentas = [
         pets: true
     },
     {
-        nombre: 'Apartamento acogedor en la montaña',
-        src: 'https://cdn.bioguia.com/embed/3d0fb0142790e6b90664042cbafcb1581427139/furgoneta.jpg',
-        descripcion: 'Este apartamento acogedor está situado en lo alto de una montaña con impresionantes vistas',
-        ubicacion: '1789 Mountain Road, Summit Peaks, CA 23456',
-        habitaciones: 2,
-        baños: 1,
-        costo: 1200,
-        smoke: true,
-        pets: true
+        nombre: 'Lujosa casa en cerca de la naturaleza',
+        src: 'https://www.laconservancy.org/wp-content/uploads/2022/10/JapaneseHouse_KellySutherlinMcLeodArchitectureInc.jpg',
+        descripcion: 'Tranquilidad y confort, ubicada en una gran zona rural',
+        ubicacion: '4499 Norberto Drive, Monahanfort, Oklahoma',
+        habitaciones: 8,
+        baños: 4,
+        costo: 8570,
+        smoke: false,
+        pets: false
     }
 ];
 
@@ -59,13 +59,35 @@ const propiedadesAlquiler = [
     },
     {
         nombre: 'Cabaña en la nieve',
-        src: 'https://images.pexels.com/photos/10936350/pexels-photo-10936350.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        src: 'https://images.pexels.com/photos/28179112/pexels-photo-28179112/free-photo-of-a-ski-resort-with-snow-covered-mountains-and-houses.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
         descripcion: 'Amplio apartamente y confortable, para disfrutar climas frios',
         ubicacion: '99296 Hamill Stravenue, Metzview, New York',
         habitaciones: 4,
         baños: 2,
         costo: 2400,
         smoke: false,
+        pets: true
+    },
+    {
+        nombre: 'Comodo apartamento en zona fluvial',
+        src: 'https://images.pexels.com/photos/18293709/pexels-photo-18293709/free-photo-of-gondolas-on-canal-in-venice.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        descripcion: 'Zona preferida por turista por su comodidad y excelente ubicacion.',
+        ubicacion: '99296 Hamill Stravenue, Metzview, New York',
+        habitaciones: 3,
+        baños: 1,
+        costo: 3300,
+        smoke: true,
+        pets: false
+    },
+    {
+        nombre: 'Apartamento apmplio residencial',
+        src: 'https://images.pexels.com/photos/11986100/pexels-photo-11986100.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+        descripcion: 'Cerca de parques y zonas verdes para disfrutar.',
+        ubicacion: '7616 Mattie Keys, Kirlinland, Minnesota',
+        habitaciones: 4,
+        baños: 3,
+        costo: 1800,
+        smoke: true,
         pets: true
     },
 ];
@@ -100,7 +122,7 @@ const renderCards = (propierties, html) => {
                         <i class="fas fa-bed"></i> ${propiertie.habitaciones} Habitaciones |
                         <i class="fas fa-bath"></i> ${propiertie.baños} Baños
                         </p>
-                        <p><i class="fas fa-dollar-sign"></i> ${propiertie.costo.toLocaleString()}</p>
+                        <p><i class="fas fa-dollar-sign"></i> ${propiertie.costo}</p>
                         ${propiertie.smoke?
                             '<p class="text-success"><i class="fas fa-smoking"></i> Permitido fumar</p>'
                             :'<p class="text-danger"><i class="fas fa-smoking-ban"></i> No se permite fumar</p>'
